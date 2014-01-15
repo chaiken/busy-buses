@@ -384,6 +384,16 @@ config LOSETUP
 	  file or block device, and to query the status of a loop device. This
 	  version does not currently support enabling data encryption.
 
+config LSI2C
+	bool "lsi2c"
+	default n
+	#select PLATFORM_LINUX
+	help
+	  lsi2c is a utility for displaying information about I2c buses in the
+	  system and devices connected to them.
+
+	  This version uses sysfs (/sys/bus/i2c/devices) only.
+
 config LSPCI
 	bool "lspci"
 	default y
@@ -393,6 +403,16 @@ config LSPCI
 	  system and devices connected to them.
 
 	  This version uses sysfs (/sys/bus/pci/devices) only.
+
+config LSSPI
+	bool "lsspi"
+	default n
+	#select PLATFORM_LINUX
+	help
+	  lsspi is a utility for displaying information about SPI buses in the
+	  system and devices connected to them.
+
+	  This version uses sysfs (/sys/bus/spi/devices) only.
 
 config LSUSB
 	bool "lsusb"
